@@ -1,0 +1,14 @@
+{
+  "name": "focislav",
+  "version": "1.0.0",
+  "description": "a personal web regarding photography FOCISLAV",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+  },
+  "author": "Arkadiusz Mikulak",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.11.0"
+  }
+}

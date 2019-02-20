@@ -1,0 +1,80 @@
+@import "config.scss";
+@import "gallery.scss";
+
+* {
+  color: $color-font-main;
+  font-family: monospace;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+body {
+  background-color: $color-bg;
+}
+.fixed-menu {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+
+  //header n nav
+  .flex-container {
+    position: relative;
+    background: $color-bg-secondary;
+    height: 7vh;
+    min-height: 45px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 7px -2px rgb(39, 39, 39);
+
+    #nav {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+
+      #nav-list {
+        padding: 0;
+        list-style: none;
+        display: flex;
+
+        .nav-item {
+          .link {
+            color: $color-link;
+            font-size: 1.1rem;
+            text-decoration: none;
+            letter-spacing: 0.6rem;
+            display: block;
+            padding: 15px;
+          }
+        }
+      }
+    }
+
+    .logo,
+    .menu {
+      background: $color-bg-secondary;
+      text-align: center;
+      margin: 0;
+      padding-right: 1vw;
+    }
+    .logo {
+      letter-spacing: 16px;
+      font-size: 20px;
+      padding-left: 3vw;
+      text-transform: uppercase;
+    }
+    .menu {
+      position: relative;
+
+      .menu-stripe {
+        background: $color-font-main;
+        width: 40px;
+        height: 3px;
+        margin: 9px;
+        border-radius: 15%;
+        box-shadow: 0 2px 3px rgb(31, 31, 31);
+      }
+    }
+  }
+}
