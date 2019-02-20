@@ -3,3 +3,23 @@ $color-bg: rgb(255, 255, 255);
 $color-bg-secondary: rgb(255, 255, 255);
 $color-font-main: rgb(44, 44, 44);
 $color-link: rgb(39, 39, 39);
+
+@mixin cubicBezier {
+  transition: 300ms cubic-bezier(0.1, 0.1, 1, 1);
+}
+
+@mixin mediaExtraLarge {
+  @media screen and (min-width: 1171px) {
+    @content;
+  }
+}
+@mixin mediaLarge {
+  @media screen and (max-width: 1170px) {
+    @content;
+  }
+}
+// @mixin mediaLarge {
+//   @media screen and (min-width: 769px) and (max-width: 1170px) {
+//     @content;
+//   }
+// }

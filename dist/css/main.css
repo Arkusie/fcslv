@@ -6,7 +6,7 @@
     display: grid;
     grid-gap: 2rem;
     margin: 100px 20px 10px;
-    max-width: 1080px;
+    max-width: 1180px;
     grid-template-columns: repeat(6, 1fr); }
     .grid-container .grid .grid-item {
       display: flex;
@@ -81,6 +81,8 @@ body {
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%); }
+      .fixed-menu .flex-container #nav.toggleNav {
+        visibility: visible; }
       .fixed-menu .flex-container #nav #nav-list {
         padding: 0;
         list-style: none;
@@ -113,22 +115,50 @@ body {
             transition: transform 300ms;
             transform-origin: right; }
     .fixed-menu .flex-container .logo,
-    .fixed-menu .flex-container .menu {
+    .fixed-menu .flex-container #menu-container {
       background: white;
       text-align: center;
       margin: 0;
-      padding-right: 1vw; }
+      padding-right: 1vw;
+      cursor: pointer; }
     .fixed-menu .flex-container .logo {
       letter-spacing: 16px;
       font-size: 20px;
       padding-left: 3vw;
       text-transform: uppercase; }
-    .fixed-menu .flex-container .menu {
+    .fixed-menu .flex-container #menu-container {
       position: relative; }
-      .fixed-menu .flex-container .menu .menu-stripe {
+      .fixed-menu .flex-container #menu-container #stripe1.toggleMenu {
+        transform: rotateZ(-45deg) translateY(7px) translateX(-10px);
+        transition: transform 300ms cubic-bezier(0.2, 0.82, 0.165, 1); }
+      .fixed-menu .flex-container #menu-container #stripe2.toggleMenu {
+        opacity: 0;
+        transform: translateX(-300px);
+        transition-property: opacity transform;
+        transition: 500ms cubic-bezier(0.3, 0.82, 0.165, 1); }
+      .fixed-menu .flex-container #menu-container #stripe3.toggleMenu {
+        transform: rotateZ(45deg) translateY(-7px) translateX(-10px);
+        transition: transform 300ms cubic-bezier(0.2, 0.82, 0.165, 1); }
+      .fixed-menu .flex-container #menu-container .menu-stripe {
         background: #2c2c2c;
         width: 40px;
         height: 3px;
         margin: 9px;
         border-radius: 15%;
-        box-shadow: 0 2px 3px #9c9c9c; }
+        box-shadow: 0 2px 3px #9c9c9c;
+        transition: 500ms cubic-bezier(0.3, 0.82, 0.165, 1); }
+
+.current-page {
+  border-bottom: 5px solid black; }
+
+@media screen and (min-width: 1171px) {
+  #menu-container {
+    display: none; } }
+
+@media screen and (max-width: 1170px) {
+  #menu-container {
+    display: unset; }
+  body {
+    background-color: #ffd78c; }
+  #nav {
+    visibility: hidden; } }

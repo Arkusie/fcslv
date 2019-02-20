@@ -1,0 +1,20 @@
+@import "config.scss";
+
+@include mediaExtraLarge {
+  #menu-container {
+    display: none;
+  }
+}
+
+@include mediaLarge {
+  #menu-container {
+    display: unset;
+  }
+  body {
+    background-color: rgb(255, 215, 140);
+  }
+
+  #nav {
+    visibility: hidden;
+  }
+}
