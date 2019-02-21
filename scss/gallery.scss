@@ -3,7 +3,33 @@
   justify-content: center;
   align-items: center;
 
+  #grid-drone,
+  #grid-camera {
+    position: relative;
+    &.toggleGallery {
+      display: none;
+    }
+  }
+
+  // #grid-camera:before {
+  //   position: absolute;
+  //   content: "";
+  //   width: 100%;
+  //   height: 100%;
+  //   top: 0;
+  //   right: 0;
+  //   background: coral;
+  //   opacity: 0.9;
+  //   z-index: 5;
+  // }
+
   .grid {
+    opacity: 1;
+    @include TransitionSlow;
+    &.toggleGallery {
+      opacity: 0;
+      @include TransitionSlow;
+    }
     display: grid;
     grid-gap: 2rem;
     margin: 100px 20px 10px;
