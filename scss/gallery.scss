@@ -26,15 +26,16 @@
   .grid {
     opacity: 1;
     @include TransitionSlow;
+
+    display: grid;
+    grid-gap: 2rem;
+    margin: 100px 20px 10px;
+    max-width: 1250px;
+    grid-template-columns: repeat(6, 1fr);
     &.toggleGallery {
       opacity: 0;
       @include TransitionSlow;
     }
-    display: grid;
-    grid-gap: 2rem;
-    margin: 100px 20px 10px;
-    max-width: 1180px;
-    grid-template-columns: repeat(6, 1fr);
     .grid-item {
       display: flex;
       align-items: center;

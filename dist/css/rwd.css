@@ -16,3 +16,7 @@
       visibility: visible;
       transform: translateX(0);
       opacity: 1; } }
+
+@media screen and (max-width: 860px) {
+  #nav-list.toggleNav {
+    transform: translateY(45px); } }

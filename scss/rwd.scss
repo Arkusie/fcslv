@@ -19,12 +19,19 @@
     visibility: hidden;
     transform: translateX(100%);
     opacity: 0;
-    // transition-property: transform;
-    // @include Transition600msOvershoot;
+
     &.toggleNav {
       visibility: visible;
       transform: translateX(0);
       opacity: 1;
+    }
+  }
+}
+
+@include mediaMedium {
+  #nav-list {
+    &.toggleNav {
+      transform: translateY(45px);
     }
   }
 }
