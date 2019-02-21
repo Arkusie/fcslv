@@ -2,19 +2,29 @@
 
 @include mediaExtraLarge {
   #menu-container {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    @include TransitionSlow;
   }
 }
 
 @include mediaLarge {
   #menu-container {
-    display: unset;
-  }
-  body {
-    background-color: rgb(255, 215, 140);
+    visibility: visible;
+    opacity: 1;
+    @include TransitionSlow;
   }
 
-  #nav {
+  #nav-list {
     visibility: hidden;
+    transform: translateX(100%);
+    opacity: 0;
+    transition-property: transform;
+    @include Transition600msOvershoot;
+    &.toggleNav {
+      visibility: visible;
+      transform: translateX(0);
+      opacity: 1;
+    }
   }
 }

@@ -69,8 +69,7 @@ body {
   .fixed-menu .flex-container {
     position: relative;
     background: white;
-    height: 7vh;
-    min-height: 45px;
+    height: 45px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -81,12 +80,11 @@ body {
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%); }
-      .fixed-menu .flex-container #nav.toggleNav {
-        visibility: visible; }
       .fixed-menu .flex-container #nav #nav-list {
         padding: 0;
         list-style: none;
-        display: flex; }
+        display: flex;
+        transition: 800ms cubic-bezier(0.175, 0.885, 0.3, 1.1); }
         .fixed-menu .flex-container #nav #nav-list .nav-item .link {
           position: relative;
           color: #272727;
@@ -130,15 +128,15 @@ body {
       position: relative; }
       .fixed-menu .flex-container #menu-container #stripe1.toggleMenu {
         transform: rotateZ(-45deg) translateY(7px) translateX(-10px);
-        transition: transform 300ms cubic-bezier(0.2, 0.82, 0.165, 1); }
+        transition: 600ms cubic-bezier(0.175, 0.885, 0.2, 1.1); }
       .fixed-menu .flex-container #menu-container #stripe2.toggleMenu {
         opacity: 0;
         transform: translateX(-300px);
         transition-property: opacity transform;
-        transition: 500ms cubic-bezier(0.3, 0.82, 0.165, 1); }
+        transition: 600ms cubic-bezier(0.175, 0.885, 0.2, 1.1); }
       .fixed-menu .flex-container #menu-container #stripe3.toggleMenu {
         transform: rotateZ(45deg) translateY(-7px) translateX(-10px);
-        transition: transform 300ms cubic-bezier(0.2, 0.82, 0.165, 1); }
+        transition: 600ms cubic-bezier(0.175, 0.885, 0.2, 1.1); }
       .fixed-menu .flex-container #menu-container .menu-stripe {
         background: #2c2c2c;
         width: 40px;
@@ -153,12 +151,22 @@ body {
 
 @media screen and (min-width: 1171px) {
   #menu-container {
-    display: none; } }
+    visibility: hidden;
+    opacity: 0;
+    transition: 800ms cubic-bezier(0.175, 0.885, 0.3, 1.1); } }
 
 @media screen and (max-width: 1170px) {
   #menu-container {
-    display: unset; }
-  body {
-    background-color: #ffd78c; }
-  #nav {
-    visibility: hidden; } }
+    visibility: visible;
+    opacity: 1;
+    transition: 800ms cubic-bezier(0.175, 0.885, 0.3, 1.1); }
+  #nav-list {
+    visibility: hidden;
+    transform: translateX(100%);
+    opacity: 0;
+    transition-property: transform;
+    transition: 600ms cubic-bezier(0.175, 0.885, 0.2, 1.1); }
+    #nav-list.toggleNav {
+      visibility: visible;
+      transform: translateX(0);
+      opacity: 1; } }
