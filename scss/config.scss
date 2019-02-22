@@ -27,6 +27,11 @@ $color-link: rgb(39, 39, 39);
     @content;
   }
 }
+@mixin mediaSmall {
+  @media screen and(max-width: 570px) {
+    @content;
+  }
+}
 // @mixin mediaLarge {
 //   @media screen and (min-width: 769px) and (max-width: 1170px) {
 //     @content;

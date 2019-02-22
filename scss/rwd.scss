@@ -12,7 +12,7 @@
   #menu-container {
     visibility: visible;
     opacity: 1;
-    // @include TransitionSlow;
+    @include TransitionSlow;
   }
 
   #nav-list {
@@ -26,12 +26,55 @@
       opacity: 1;
     }
   }
+  // gallery
+  .grid-container {
+    .grid {
+      .grid-item {
+        &.item3 {
+          grid-column: 1/4;
+        }
+        &.item4 {
+          grid-column: 4/7;
+        }
+        &.item5 {
+          grid-column: 1/4;
+        }
+        &.item6 {
+          grid-column: 4/7;
+        }
+        &.item7 {
+          grid-column: 1/4;
+        }
+      }
+    }
+  }
 }
 
 @include mediaMedium {
   #nav-list {
     &.toggleNav {
       transform: translateY(45px);
+      background: white;
+      width: 100vw;
+    }
+  }
+}
+
+@include mediaSmall {
+  .grid-container {
+    .grid {
+      .grid-item {
+        &.item1,
+        &.item2,
+        &.item3,
+        &.item4,
+        &.item5,
+        &.item6,
+        &.item7,
+        &.item8 {
+          grid-column: 1/7;
+        }
+      }
     }
   }
 }

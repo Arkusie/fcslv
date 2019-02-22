@@ -25,8 +25,8 @@ let isAbout = false;
 
 function droneContentDisplay() {
   if (!isDrone) {
-    droneContent.classList.add("toggleGallery");
-    cameraContent.classList.remove("toggleGallery");
+    droneContent.classList.remove("toggleGallery");
+    cameraContent.classList.add("toggleGallery");
     aboutContent.classList.add("toggleGallery");
     droneBtn.classList.add("current-page");
     cameraBtn.classList.remove("current-page");
@@ -38,8 +38,8 @@ function droneContentDisplay() {
 }
 function cameraContentDisplay() {
   if (!isCamera) {
-    droneContent.classList.remove("toggleGallery");
-    cameraContent.classList.add("toggleGallery");
+    droneContent.classList.add("toggleGallery");
+    cameraContent.classList.remove("toggleGallery");
     aboutContent.classList.add("toggleGallery");
     droneBtn.classList.remove("current-page");
     cameraBtn.classList.add("current-page");

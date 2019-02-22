@@ -61,11 +61,26 @@ body {
       transform: translate(-50%, -50%);
 
       #nav-list {
+        position: relative;
         padding: 0;
         list-style: none;
         display: flex;
         @include TransitionSlow;
+
         .nav-item {
+          // #drone-link {
+          //   &#drone-link:after {
+          //     position: absolute;
+          //     content: "drone";
+          //     color: rgb(255, 219, 14);
+          //     top: 16px;
+          //     left: 14px;
+          //     width: 100%;
+          //     height: 100%;
+          //     z-index: -1;
+          //     animation: logoGlitch 3.3s infinite;
+          //   }
+          // }
           .link {
             position: relative;
             color: $color-link;
