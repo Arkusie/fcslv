@@ -64,7 +64,6 @@ function aboutContentDisplay() {
 
     droneContent.classList.add("toggleGallery");
     cameraContent.classList.add("toggleGallery");
-    // about got reversed due to visivility instead of display
     aboutContent.classList.remove("toggleGallery");
     droneBtn.classList.remove("current-page");
     cameraBtn.classList.remove("current-page");

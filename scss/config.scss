@@ -2,7 +2,14 @@
 $color-bg: rgb(255, 255, 255);
 $color-bg-secondary: rgb(255, 255, 255);
 $color-font-main: rgb(44, 44, 44);
-$color-link: rgb(39, 39, 39);
+$color-link: rgb(34, 34, 34);
+$color-curtain: rgb(255, 255, 255);
+// glitch colors
+$color-glitch-pink: rgb(255, 166, 207);
+$color-glitch-teal: rgb(59, 255, 245);
+// fonts
+$font-size-menu: 1.2rem;
+$font-size-logo: 26px;
 
 // transitions
 @mixin Transition600msOvershoot {

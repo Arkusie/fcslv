@@ -67,24 +67,104 @@ body {
         display: flex;
         @include TransitionSlow;
 
+        // nav item and animations
+        #droneBtn {
+          &.current-page {
+            &#droneBtn:before,
+            &#droneBtn:after {
+              position: absolute;
+              content: "drone";
+              text-align: center;
+              font-size: $font-size-menu;
+              text-decoration: none;
+              letter-spacing: 0.6rem;
+              width: 100%;
+              height: 100%;
+              z-index: -1;
+              animation: logoGlitch 3s infinite;
+            }
+            &#droneBtn:before {
+              color: $color-glitch-teal;
+              top: 15px;
+              left: -1px;
+            }
+            &#droneBtn:after {
+              color: $color-glitch-pink;
+              top: 15px;
+              left: 1px;
+            }
+          }
+        }
+        //
+        #cameraBtn {
+          &.current-page {
+            &#cameraBtn:before,
+            &#cameraBtn:after {
+              position: absolute;
+              content: "camera";
+              text-align: center;
+              font-size: $font-size-menu;
+              text-decoration: none;
+              letter-spacing: 0.6rem;
+              color: $color-glitch-teal;
+              top: 15px;
+              left: 1px;
+              width: 100%;
+              height: 100%;
+              z-index: -1;
+              animation: logoGlitch 3s infinite;
+            }
+
+            &#cameraBtn:before {
+              color: $color-glitch-teal;
+              top: 15px;
+              left: -1px;
+            }
+            &#drcameraBtnoneBtn:after {
+              color: $color-glitch-pink;
+              top: 15px;
+              left: 1px;
+            }
+          }
+        }
+        #aboutBtn {
+          &.current-page {
+            &#aboutBtn:before,
+            &#aboutBtn:after {
+              position: absolute;
+              content: "about";
+              text-align: center;
+              font-size: $font-size-menu;
+              text-decoration: none;
+              letter-spacing: 0.6rem;
+              color: $color-glitch-teal;
+              top: 15px;
+              left: 1px;
+              width: 100%;
+              height: 100%;
+              z-index: -1;
+              animation: logoGlitch 3s infinite;
+            }
+
+            &#aboutBtn:before {
+              color: $color-glitch-teal;
+              top: 15px;
+              left: -1px;
+            }
+            &#aboutBtn:after {
+              color: $color-glitch-pink;
+              top: 15px;
+              left: 1px;
+            }
+          }
+        }
+
         .nav-item {
-          // #drone-link {
-          //   &#drone-link:after {
-          //     position: absolute;
-          //     content: "drone";
-          //     color: rgb(255, 219, 14);
-          //     top: 16px;
-          //     left: 14px;
-          //     width: 100%;
-          //     height: 100%;
-          //     z-index: -1;
-          //     animation: logoGlitch 3.3s infinite;
-          //   }
-          // }
+          position: relative;
           .link {
             position: relative;
             color: $color-link;
-            font-size: 1.1rem;
+            font-size: $font-size-menu;
             text-decoration: none;
             letter-spacing: 0.6rem;
             display: block;
@@ -122,43 +202,43 @@ body {
       text-align: center;
       margin: 0;
       padding-right: 1vw;
-      cursor: pointer;
     }
     .logo {
       position: relative;
       letter-spacing: 16px;
-      font-size: 26px;
+      font-size: $font-size-logo;
       padding-left: 3vw;
       text-transform: uppercase;
       z-index: 1;
+
       #logoEffect {
         position: relative;
         width: 100%;
         height: 100%;
 
-        &#logoEffect:before {
+        &#logoEffect:before,
+        &#logoEffect:after {
           position: absolute;
           content: "FCSLV";
-          font-size: 26px;
+          font-size: $font-size-logo;
           top: -29px;
           right: 3px;
           height: 100%;
           width: 150px;
-          color: rgb(255, 166, 207);
+          color: $color-glitch-pink;
           z-index: -1;
-          animation: logoGlitch 5s infinite;
+        }
+        &#logoEffect:before {
+          color: $color-glitch-pink;
+          top: -29px;
+          right: 3px;
+          animation: logoGlitch 6s infinite;
         }
         &#logoEffect:after {
-          position: absolute;
-          content: "FCSLV";
-          font-size: 26px;
+          color: $color-glitch-teal;
           top: -32px;
           right: 0px;
-          height: 100%;
-          width: 150px;
-          color: rgb(59, 255, 245);
-          z-index: -2;
-          animation: logoGlitch 6s infinite;
+          animation: logoGlitch 7s infinite;
         }
       }
     }
@@ -207,6 +287,7 @@ body {
 @keyframes logoGlitch {
   1% {
     opacity: 1;
+    transform: rotateZ(-2deg);
   }
   3% {
     opacity: 1;
@@ -240,5 +321,6 @@ body {
   }
   100% {
     opacity: 1;
+    transform: rotateZ(2deg);
   }
 }

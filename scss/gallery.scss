@@ -8,16 +8,18 @@
   #curtain-camera {
     position: absolute;
     top: 45px;
-    left: 0;
-    background: rgb(255, 255, 255);
+    left: 50%;
+    transform: translate(-50%, 0);
+    background: $color-bg;
     width: 100%;
+    max-width: 2000px;
     height: 100%;
     visibility: visible;
     opacity: 1;
 
     &.curtainOff {
       z-index: 100;
-      background: rgb(0, 0, 0);
+      background: $color-curtain;
       visibility: hidden;
       opacity: 0;
       @include curtainTransition;
