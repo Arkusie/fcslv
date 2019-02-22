@@ -7,6 +7,8 @@ const navMenu = document.getElementById("nav-list");
 const menuStripe1 = document.getElementById("stripe1");
 const menuStripe2 = document.getElementById("stripe2");
 const menuStripe3 = document.getElementById("stripe3");
+const curtainCamera = document.getElementById("curtain-camera");
+const curtainDrone = document.getElementById("curtain-drone");
 
 const droneContent = document.getElementById("grid-drone");
 const cameraContent = document.getElementById("grid-camera");
@@ -25,6 +27,9 @@ let isAbout = false;
 
 function droneContentDisplay() {
   if (!isDrone) {
+    curtainCamera.classList.remove("curtainOff");
+    curtainDrone.classList.add("curtainOff");
+
     droneContent.classList.remove("toggleGallery");
     cameraContent.classList.add("toggleGallery");
     aboutContent.classList.add("toggleGallery");
@@ -38,6 +43,9 @@ function droneContentDisplay() {
 }
 function cameraContentDisplay() {
   if (!isCamera) {
+    curtainCamera.classList.add("curtainOff");
+    curtainDrone.classList.remove("curtainOff");
+
     droneContent.classList.add("toggleGallery");
     cameraContent.classList.remove("toggleGallery");
     aboutContent.classList.add("toggleGallery");
@@ -51,6 +59,9 @@ function cameraContentDisplay() {
 }
 function aboutContentDisplay() {
   if (!isAbout) {
+    curtainCamera.classList.add("curtainOff");
+    curtainDrone.classList.add("curtainOff");
+
     droneContent.classList.add("toggleGallery");
     cameraContent.classList.add("toggleGallery");
     // about got reversed due to visivility instead of display

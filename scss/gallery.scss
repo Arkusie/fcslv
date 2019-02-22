@@ -1,7 +1,28 @@
 .grid-container {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  #curtain-drone,
+  #curtain-camera {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    background: rgb(255, 255, 255);
+    width: 100%;
+    height: 100%;
+    visibility: visible;
+    opacity: 1;
+
+    &.curtainOff {
+      z-index: 100;
+      background: rgb(0, 0, 0);
+      visibility: hidden;
+      opacity: 0;
+      @include curtainTransition;
+    }
+  }
 
   #grid-drone,
   #grid-camera {
