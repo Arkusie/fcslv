@@ -9,6 +9,10 @@
 }
 body {
   background-color: $color-bg;
+
+  .grid-item {
+    cursor: pointer;
+  }
 }
 #about-container {
   visibility: visible;
@@ -35,6 +39,43 @@ body {
     visibility: hidden;
     opacity: 0;
   }
+}
+
+#modal-container {
+  visibility: hidden;
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 98vw;
+  height: 93vh;
+  background: coral;
+  z-index: 40;
+  border-left: 5px solid black;
+  border-right: 5px solid black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  #modal-off {
+    display: block;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 50px;
+    font-size: 10vw;
+    transform: rotateZ(45deg);
+    &#modal-off:hover {
+      color: white;
+    }
+  }
+}
+
+#img-fluid {
+  width: 80%;
+  height: 60%;
 }
 
 .fixed-menu {
@@ -204,6 +245,7 @@ body {
       padding-right: 1vw;
     }
     .logo {
+      width: 160px;
       position: relative;
       letter-spacing: 16px;
       font-size: $font-size-logo;
@@ -212,7 +254,7 @@ body {
       z-index: 1;
 
       #logoEffect {
-        position: relative;
+        position: absolute;
         width: 100%;
         height: 100%;
 
@@ -221,23 +263,22 @@ body {
           position: absolute;
           content: "FCSLV";
           font-size: $font-size-logo;
-          top: -29px;
-          right: 3px;
+          width: 100%;
           height: 100%;
-          width: 150px;
           color: $color-glitch-pink;
           z-index: -1;
         }
         &#logoEffect:before {
           color: $color-glitch-pink;
           top: -29px;
-          right: 3px;
+          right: 6px;
+
           animation: logoGlitch 6s infinite;
         }
         &#logoEffect:after {
           color: $color-glitch-teal;
           top: -32px;
-          right: 0px;
+          right: 2px;
           animation: logoGlitch 7s infinite;
         }
       }

@@ -13,13 +13,36 @@ const curtainDrone = document.getElementById("curtain-drone");
 const droneContent = document.getElementById("grid-drone");
 const cameraContent = document.getElementById("grid-camera");
 const aboutContent = document.getElementById("about-container");
-
+// modal
+const modal = document.getElementById("modal-container");
+const modalBtn = document.getElementById("modal-off");
+const gridPic = document.querySelectorAll(".picture");
+const imgModal = document.getElementById("img-fluid");
+let picClickedSrc;
 // listeners
 droneBtn.addEventListener("click", droneContentDisplay);
 cameraBtn.addEventListener("click", cameraContentDisplay);
 aboutBtn.addEventListener("click", aboutContentDisplay);
 menuButton.addEventListener("click", ToggleMenu);
+// modal listeners
+modalBtn.addEventListener("click", modalOff);
+
+gridPic.forEach(pic => {
+  pic.addEventListener("click", modalOn);
+});
 // //
+
+function modalOn() {
+  console.log(event);
+  modal.style.visibility = "visible";
+  picClickedSrc = this.src;
+  console.log(picClickedSrc);
+  imgModal.src = picClickedSrc;
+}
+
+function modalOff() {
+  modal.style.visibility = "hidden";
+}
 
 let isDrone = true;
 let isCamera = false;

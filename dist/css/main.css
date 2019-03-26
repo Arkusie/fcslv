@@ -96,6 +96,8 @@
 
 body {
   background-color: white; }
+  body .grid-item {
+    cursor: pointer; }
 
 #about-container {
   visibility: visible;
@@ -118,6 +120,37 @@ body {
   #about-container.toggleGallery {
     visibility: hidden;
     opacity: 0; }
+
+#modal-container {
+  visibility: hidden;
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 98vw;
+  height: 93vh;
+  background: coral;
+  z-index: 40;
+  border-left: 5px solid black;
+  border-right: 5px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; }
+  #modal-container #modal-off {
+    display: block;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 50px;
+    font-size: 10vw;
+    transform: rotateZ(45deg); }
+    #modal-container #modal-off#modal-off:hover {
+      color: white; }
+
+#img-fluid {
+  width: 80%;
+  height: 60%; }
 
 .fixed-menu {
   position: fixed;
@@ -243,6 +276,7 @@ body {
       margin: 0;
       padding-right: 1vw; }
     .fixed-menu .flex-container .logo {
+      width: 160px;
       position: relative;
       letter-spacing: 16px;
       font-size: 26px;
@@ -250,28 +284,26 @@ body {
       text-transform: uppercase;
       z-index: 1; }
       .fixed-menu .flex-container .logo #logoEffect {
-        position: relative;
+        position: absolute;
         width: 100%;
         height: 100%; }
         .fixed-menu .flex-container .logo #logoEffect#logoEffect:before, .fixed-menu .flex-container .logo #logoEffect#logoEffect:after {
           position: absolute;
           content: "FCSLV";
           font-size: 26px;
-          top: -29px;
-          right: 3px;
+          width: 100%;
           height: 100%;
-          width: 150px;
           color: #ffa6cf;
           z-index: -1; }
         .fixed-menu .flex-container .logo #logoEffect#logoEffect:before {
           color: #ffa6cf;
           top: -29px;
-          right: 3px;
+          right: 6px;
           animation: logoGlitch 6s infinite; }
         .fixed-menu .flex-container .logo #logoEffect#logoEffect:after {
           color: #3bfff5;
           top: -32px;
-          right: 0px;
+          right: 2px;
           animation: logoGlitch 7s infinite; }
     .fixed-menu .flex-container #menu-container {
       position: relative; }
