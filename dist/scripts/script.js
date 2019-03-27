@@ -3,6 +3,10 @@ const droneBtn = document.getElementById("droneBtn");
 const cameraBtn = document.getElementById("cameraBtn");
 const aboutBtn = document.getElementById("aboutBtn");
 
+let isDrone = true;
+let isCamera = false;
+let isAbout = false;
+
 const navMenu = document.getElementById("nav-list");
 const menuStripe1 = document.getElementById("stripe1");
 const menuStripe2 = document.getElementById("stripe2");
@@ -30,8 +34,9 @@ modalBtn.addEventListener("click", modalOff);
 gridPic.forEach(pic => {
   pic.addEventListener("click", modalOn);
 });
-// //
+//
 
+//modal
 function modalOn() {
   modal.style.visibility = "visible";
   modal.classList.toggle("modalAnimationOn");
@@ -45,10 +50,6 @@ function modalOff() {
   modal.style.visibility = "hidden";
   modal.classList.toggle("modalAnimationOn");
 }
-
-let isDrone = true;
-let isCamera = false;
-let isAbout = false;
 
 function droneContentDisplay() {
   if (!isDrone) {

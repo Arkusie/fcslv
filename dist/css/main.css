@@ -9,7 +9,7 @@
     top: 45px;
     left: 50%;
     transform: translate(-50%, 0);
-    background: #f3f3f3;
+    background: #f1f1f1;
     width: 100%;
     max-width: 2000px;
     height: 100%;
@@ -21,7 +21,7 @@
       background: white;
       visibility: hidden;
       opacity: 0;
-      transition: 1100ms cubic-bezier(0.19, 1, 0.22, 1); }
+      transition: 700ms cubic-bezier(0.19, 1, 0.22, 1); }
   .grid-container #grid-drone,
   .grid-container #grid-camera {
     position: relative; }
@@ -30,7 +30,7 @@
       display: none; }
   .grid-container .grid {
     opacity: 1;
-    transition: 800ms cubic-bezier(0.175, 0.885, 0.3, 1.1);
+    transition: 700ms cubic-bezier(0.175, 0.885, 0.3, 1.1);
     display: grid;
     grid-gap: 2rem;
     margin: 100px 20px 10px;
@@ -38,7 +38,7 @@
     grid-template-columns: repeat(6, 1fr); }
     .grid-container .grid.toggleGallery {
       opacity: 0;
-      transition: 800ms cubic-bezier(0.175, 0.885, 0.3, 1.1); }
+      transition: 700ms cubic-bezier(0.175, 0.885, 0.3, 1.1); }
     .grid-container .grid .grid-item {
       display: flex;
       align-items: center;
@@ -57,7 +57,7 @@
         content: "";
         top: 10%;
         left: -5px;
-        background: #f3f3f3;
+        background: #f1f1f1;
         width: calc(100% + 10px);
         height: 80%;
         z-index: 0; }
@@ -66,7 +66,7 @@
         content: "";
         top: -5;
         left: 15%;
-        background: #f3f3f3;
+        background: #f1f1f1;
         width: 70%;
         height: calc(100% + 10px);
         z-index: 0; }
@@ -95,7 +95,7 @@
   margin: 0 auto; }
 
 body {
-  background-color: #f3f3f3; }
+  background-color: #f1f1f1; }
   body .grid-item {
     cursor: pointer; }
 
@@ -114,12 +114,31 @@ body {
   flex-direction: column;
   align-items: center; }
   #about-container #heading {
+    position: relative;
     margin: 35px 15px;
     font-size: 3rem;
-    letter-spacing: 10px; }
+    letter-spacing: 10px;
+    user-select: none; }
+    #about-container #heading#heading:before, #about-container #heading#heading:after {
+      content: "focislav";
+      position: absolute;
+      z-index: -1; }
+    #about-container #heading#heading:before {
+      top: 2px;
+      left: -2px;
+      color: #ffa6cf;
+      animation: logoGlitch 7.2s infinite; }
+    #about-container #heading#heading:after {
+      top: -2px;
+      left: 2px;
+      color: #3bfff5;
+      animation: logoGlitch 8.5s infinite; }
   #about-container #contact-heading {
-    padding: 20px 0;
+    padding: 60px 0 20px 0;
     font-size: 2rem; }
+  #about-container #intro-p,
+  #about-container #info {
+    text-align: justify; }
   #about-container #intro-p {
     padding: 0px 20px 50px; }
   #about-container #info {
@@ -137,11 +156,10 @@ body {
   top: 50px;
   left: 50%;
   transform: translateX(-50%);
-  width: 95vw;
-  height: 93vh;
-  background: rgba(255, 166, 207, 0.8);
+  width: 100vw;
+  height: 94vh;
+  background: rgba(255, 212, 232, 0.8);
   z-index: 40;
-  border: 1px solid #3bfff5;
   opacity: 0;
   display: flex;
   justify-content: center;
@@ -154,16 +172,31 @@ body {
     top: 20px;
     right: 50px;
     font-size: 10vw;
-    color: #3bfff5;
+    color: #25928d;
     transform: rotateZ(45deg);
     user-select: none; }
+    #modal-container #modal-off#modal-off:before, #modal-container #modal-off#modal-off:after {
+      content: "+";
+      position: absolute;
+      z-index: -1; }
+    #modal-container #modal-off#modal-off:before {
+      top: 3px;
+      left: -3px;
+      color: #ffa6cf;
+      animation: logoGlitch 3s infinite; }
+    #modal-container #modal-off#modal-off:after {
+      top: -3px;
+      left: 3px;
+      color: #3bfff5;
+      animation: logoGlitch 4s infinite; }
     #modal-container #modal-off#modal-off:hover {
       color: white; }
 
 #img-fluid {
   width: 90%;
   max-width: 1280px;
-  height: auto; }
+  height: auto;
+  user-select: none; }
 
 .fixed-menu {
   position: fixed;
@@ -189,12 +222,12 @@ body {
         padding: 0;
         list-style: none;
         display: flex;
-        transition: 800ms cubic-bezier(0.175, 0.885, 0.3, 1.1); }
+        transition: 700ms cubic-bezier(0.175, 0.885, 0.3, 1.1); }
         .fixed-menu .flex-container #nav #nav-list #droneBtn.current-page#droneBtn:before, .fixed-menu .flex-container #nav #nav-list #droneBtn.current-page#droneBtn:after {
           position: absolute;
           content: "drone";
           text-align: center;
-          font-size: 1.2rem;
+          font-size: 1.3rem;
           text-decoration: none;
           letter-spacing: 0.6rem;
           width: 100%;
@@ -213,7 +246,7 @@ body {
           position: absolute;
           content: "camera";
           text-align: center;
-          font-size: 1.2rem;
+          font-size: 1.3rem;
           text-decoration: none;
           letter-spacing: 0.6rem;
           color: #3bfff5;
@@ -235,7 +268,7 @@ body {
           position: absolute;
           content: "about";
           text-align: center;
-          font-size: 1.2rem;
+          font-size: 1.3rem;
           text-decoration: none;
           letter-spacing: 0.6rem;
           color: #3bfff5;
@@ -258,7 +291,7 @@ body {
           .fixed-menu .flex-container #nav #nav-list .nav-item .link {
             position: relative;
             color: #222222;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             text-decoration: none;
             letter-spacing: 0.6rem;
             display: block;
@@ -287,7 +320,8 @@ body {
       background: white;
       text-align: center;
       margin: 0;
-      padding-right: 1vw; }
+      padding-right: 1vw;
+      user-select: none; }
     .fixed-menu .flex-container .logo {
       width: 160px;
       position: relative;
@@ -298,8 +332,9 @@ body {
       z-index: 1; }
       .fixed-menu .flex-container .logo #logoEffect {
         position: absolute;
+        background: coral;
         width: 100%;
-        height: 100%; }
+        height: 0; }
         .fixed-menu .flex-container .logo #logoEffect#logoEffect:before, .fixed-menu .flex-container .logo #logoEffect#logoEffect:after {
           position: absolute;
           content: "FCSLV";
@@ -347,13 +382,13 @@ body {
   #menu-container {
     visibility: hidden;
     opacity: 0;
-    transition: 800ms cubic-bezier(0.175, 0.885, 0.3, 1.1); } }
+    transition: 700ms cubic-bezier(0.175, 0.885, 0.3, 1.1); } }
 
 @media screen and (max-width: 1170px) {
   #menu-container {
     visibility: visible;
     opacity: 1;
-    transition: 800ms cubic-bezier(0.175, 0.885, 0.3, 1.1); }
+    transition: 700ms cubic-bezier(0.175, 0.885, 0.3, 1.1); }
   #nav-list {
     visibility: hidden;
     transform: translateX(100%);
@@ -395,7 +430,7 @@ body {
 @keyframes logoGlitch {
   1% {
     opacity: 1;
-    transform: rotateZ(-2deg); }
+    transform: rotateZ(-1deg); }
   3% {
     opacity: 1; }
   4% {

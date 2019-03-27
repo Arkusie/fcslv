@@ -27,17 +27,40 @@ body {
   height: 85vh;
   padding: 5vw;
   flex-direction: column;
-  // justify-content: center;
+
   align-items: center;
   #heading {
+    position: relative;
     margin: 35px 15px;
     font-size: 3rem;
     letter-spacing: 10px;
-    // border-bottom: 1px solid $color-bg-secondary;
+    user-select: none;
+    &#heading:before,
+    &#heading:after {
+      content: "focislav";
+      position: absolute;
+      z-index: -1;
+    }
+    &#heading:before {
+      top: 2px;
+      left: -2px;
+      color: $color-glitch-pink;
+      animation: logoGlitch 7.2s infinite;
+    }
+    &#heading:after {
+      top: -2px;
+      left: 2px;
+      color: $color-glitch-teal;
+      animation: logoGlitch 8.5s infinite;
+    }
   }
   #contact-heading {
-    padding: 20px 0;
+    padding: 60px 0 20px 0;
     font-size: 2rem;
+  }
+  #intro-p,
+  #info {
+    text-align: justify;
   }
   #intro-p {
     padding: 0px 20px 50px;
@@ -60,11 +83,12 @@ body {
   top: 50px;
   left: 50%;
   transform: translateX(-50%);
-  width: 95vw;
-  height: 93vh;
-  background: rgba(#ffa6cf, $alpha: 0.8);
+  width: 100vw;
+  height: 94vh;
+  background: rgba(#ffd4e8, $alpha: 0.8);
   z-index: 40;
-  border: 1px solid $color-glitch-teal;
+  // border-top: 3px solid #25928d;
+  // border-bottom: 3px solid #25928d;
   opacity: 0;
   display: flex;
   justify-content: center;
@@ -78,9 +102,28 @@ body {
     top: 20px;
     right: 50px;
     font-size: 10vw;
-    color: $color-glitch-teal;
+    color: #25928d;
     transform: rotateZ(45deg);
     user-select: none;
+
+    &#modal-off:before,
+    &#modal-off:after {
+      content: "+";
+      position: absolute;
+      z-index: -1;
+    }
+    &#modal-off:before {
+      top: 3px;
+      left: -3px;
+      color: $color-glitch-pink;
+      animation: logoGlitch 3s infinite;
+    }
+    &#modal-off:after {
+      top: -3px;
+      left: 3px;
+      color: $color-glitch-teal;
+      animation: logoGlitch 4s infinite;
+    }
 
     &#modal-off:hover {
       color: white;
@@ -92,6 +135,7 @@ body {
   width: 90%;
   max-width: 1280px;
   height: auto;
+  user-select: none;
 }
 
 .fixed-menu {
@@ -259,6 +303,7 @@ body {
       text-align: center;
       margin: 0;
       padding-right: 1vw;
+      user-select: none;
     }
     .logo {
       width: 160px;
@@ -271,8 +316,9 @@ body {
 
       #logoEffect {
         position: absolute;
+        background: coral;
         width: 100%;
-        height: 100%;
+        height: 0;
 
         &#logoEffect:before,
         &#logoEffect:after {
@@ -357,7 +403,7 @@ body {
 @keyframes logoGlitch {
   1% {
     opacity: 1;
-    transform: rotateZ(-2deg);
+    transform: rotateZ(-1deg);
   }
   3% {
     opacity: 1;

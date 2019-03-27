@@ -2,13 +2,13 @@
   #menu-container {
     visibility: hidden;
     opacity: 0;
-    transition: 800ms cubic-bezier(0.175, 0.885, 0.3, 1.1); } }
+    transition: 700ms cubic-bezier(0.175, 0.885, 0.3, 1.1); } }
 
 @media screen and (max-width: 1170px) {
   #menu-container {
     visibility: visible;
     opacity: 1;
-    transition: 800ms cubic-bezier(0.175, 0.885, 0.3, 1.1); }
+    transition: 700ms cubic-bezier(0.175, 0.885, 0.3, 1.1); }
   #nav-list {
     visibility: hidden;
     transform: translateX(100%);
