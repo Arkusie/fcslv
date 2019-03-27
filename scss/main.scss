@@ -331,7 +331,6 @@ body {
   animation: modalDisplayer forwards 300ms ease-in-out;
 }
 
-
 @keyframes modalDisplayer {
   0% {
     opacity: 0;
@@ -339,9 +338,6 @@ body {
   100% {
     opacity: 1;
   }
-}
-
-
 }
 
 @keyframes logoGlitch {

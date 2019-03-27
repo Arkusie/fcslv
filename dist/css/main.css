@@ -374,20 +374,11 @@ body {
 .modalAnimationOn {
   animation: modalDisplayer forwards 300ms ease-in-out; }
 
-.modalAnimationOff {
-  animation: modaloff forwards 300ms ease-in-out; }
-
 @keyframes modalDisplayer {
   0% {
     opacity: 0; }
   100% {
     opacity: 1; } }
-
-@keyframes modaloff {
-  0% {
-    opaticy: 1; }
-  100% {
-    opacity: 0; } }
 
 @keyframes logoGlitch {
   1% {
