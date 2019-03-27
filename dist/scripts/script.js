@@ -33,8 +33,9 @@ gridPic.forEach(pic => {
 // //
 
 function modalOn() {
-  console.log(event);
   modal.style.visibility = "visible";
+  modal.classList.toggle("modalAnimationOn");
+
   picClickedSrc = this.src;
   console.log(picClickedSrc);
   imgModal.src = picClickedSrc;
@@ -42,6 +43,7 @@ function modalOn() {
 
 function modalOff() {
   modal.style.visibility = "hidden";
+  modal.classList.toggle("modalAnimationOn");
 }
 
 let isDrone = true;
