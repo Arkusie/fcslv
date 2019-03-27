@@ -28,12 +28,12 @@
   .grid-container .grid .grid-item.item7 {
     grid-column: 1/4; } }
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 990px) {
   #nav-list.toggleNav {
     transform: translateY(45px);
     background: white;
     width: 100vw; } }
 
-@media screen and (max-width: 570px) {
+@media screen and (max-width: 670px) {
   .grid-container .grid .grid-item.item1, .grid-container .grid .grid-item.item2, .grid-container .grid .grid-item.item3, .grid-container .grid .grid-item.item4, .grid-container .grid .grid-item.item5, .grid-container .grid .grid-item.item6, .grid-container .grid .grid-item.item7, .grid-container .grid .grid-item.item8 {
     grid-column: 1/7; } }

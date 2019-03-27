@@ -1,11 +1,11 @@
 // vars
-$color-bg: rgb(255, 255, 255);
+$color-bg: rgb(243, 243, 243);
 $color-bg-secondary: rgb(255, 255, 255);
 $color-font-main: rgb(44, 44, 44);
 $color-link: rgb(34, 34, 34);
 $color-curtain: rgb(255, 255, 255);
 // glitch colors
-$color-glitch-pink: rgb(255, 166, 207);
+$color-glitch-pink: #ffa6cf;
 $color-glitch-teal: rgb(59, 255, 245);
 // fonts
 $font-size-menu: 1.2rem;
@@ -35,12 +35,12 @@ $font-size-logo: 26px;
 }
 
 @mixin mediaMedium {
-  @media screen and(max-width: 860px) {
+  @media screen and(max-width: 990px) {
     @content;
   }
 }
 @mixin mediaSmall {
-  @media screen and(max-width: 570px) {
+  @media screen and(max-width: 670px) {
     @content;
   }
 }

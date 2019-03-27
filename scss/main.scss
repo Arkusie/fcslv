@@ -31,9 +31,22 @@ body {
   align-items: center;
   #heading {
     margin: 35px 15px;
+    font-size: 3rem;
+    letter-spacing: 10px;
+    // border-bottom: 1px solid $color-bg-secondary;
+  }
+  #contact-heading {
+    padding: 20px 0;
+    font-size: 2rem;
+  }
+  #intro-p {
+    padding: 0px 20px 50px;
   }
   #info {
     max-width: 800px;
+    padding: 15px 0;
+    border-top: 1px solid $color-bg-secondary;
+    border-bottom: 1px solid $color-bg-secondary;
   }
   &.toggleGallery {
     visibility: hidden;
@@ -47,14 +60,12 @@ body {
   top: 50px;
   left: 50%;
   transform: translateX(-50%);
-  width: 98vw;
+  width: 95vw;
   height: 93vh;
-  background: coral;
+  background: rgba(#ffa6cf, $alpha: 0.8);
   z-index: 40;
-  border-left: 5px solid black;
-  border-right: 5px solid black;
+  border: 1px solid $color-glitch-teal;
   opacity: 0;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -67,7 +78,9 @@ body {
     top: 20px;
     right: 50px;
     font-size: 10vw;
+    color: $color-glitch-teal;
     transform: rotateZ(45deg);
+    user-select: none;
 
     &#modal-off:hover {
       color: white;
@@ -76,8 +89,9 @@ body {
 }
 
 #img-fluid {
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  max-width: 1280px;
+  height: auto;
 }
 
 .fixed-menu {
